@@ -1,5 +1,8 @@
 # pikchr
 
+![CI](https://github.com/gebv/pikchr/workflows/CI/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gebv/pikchr)](https://goreportcard.com/report/github.com/gebv/pikchr)
+
 This repository is a wrapper around the `pikchr.c` for use in Golang.
 
 `pikchr.c` and `pikchr.h` version downloaded from that [https://pikchr.org/home/dir?ci=tip&type=tree](https://pikchr.org/home/dir?ci=tip&type=tree) on 2020-12-04 21:07:42.
