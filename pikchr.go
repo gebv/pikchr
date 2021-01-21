@@ -1,5 +1,6 @@
 package pikchr
 
+// #cgo LDFLAGS: -lm
 // #include "pikchr.h"
 // #include <stdlib.h>
 import "C"
