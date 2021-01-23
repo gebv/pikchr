@@ -1,0 +1,91 @@
+{
+	"name": "pikchr",
+	"displayName": "Pikchr diagrams",
+	"description": "Pikchr diagrams support for Visual Studio Code.",
+	"version": "0.0.1",
+	"publisher": "gebv",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"bugs": {
+		"url": "https://github.com/gebv/pikchr/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gebv/pikchr.git"
+	},
+	"homepage": "https://github.com/gebv/pikchr/blob/master/vscode-extenstion/README.md",
+	"categories": [
+		"Programming Languages",
+		"Formatters",
+		"Snippets",
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:pikchr.doPreviewSelectedTextDiagram"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "pikchr.doPreviewSelectedTextDiagram",
+				"title": "Preview pikchr diagrаms"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "pikchr.doPreviewSelectedTextDiagram",
+				"key": "ctrl+alt+p",
+				"mac": "shift+ctrl+p"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Сonfiguration options",
+			"properties": {
+				"pikchr.server_url": {
+					"type": "string",
+					"default": true,
+					"description": "URL to server"
+				}
+			}
+		},
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "false",
+					"command": "pikchr.doPreviewSelectedTextDiagram",
+					"group": "YourGroup@1"
+				}
+			],
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "pikchr.doPreviewSelectedTextDiagram",
+					"group": "YourGroup@1"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"extensionKind": [
+		"workspace"
+	],
+	"license": "SEE LICENSE IN LICENSE",
+	"devDependencies": {
+		"@types/vscode": "^1.52.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.15.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	},
+	"dependencies": {
+		"request": "^2.88.2"
+	}
+}
