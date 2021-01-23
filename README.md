@@ -7,6 +7,7 @@ This repository is a wrapper around the `pikchr.c` for use in Golang.
 
 `pikchr.c` and `pikchr.h` version downloaded from that [https://pikchr.org/home/dir?ci=tip&type=tree](https://pikchr.org/home/dir?ci=tip&type=tree) on 2020-12-04 21:07:42.
 
+If you have questions, comments, or suggestions, please visit the [GitHub Discussion board](https://github.com/gebv/pikchr/discussions).
 
 # What is pikchr?
 
