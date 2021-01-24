@@ -9,6 +9,8 @@ This repository is a wrapper around the `pikchr.c` for use in Golang.
 
 If you have questions, comments, or suggestions, please visit the [GitHub Discussion board](https://github.com/gebv/pikchr/discussions).
 
+If need server to generate diagrams on-the-fly via http API - [follow link](./renderserver/README.md)
+
 # What is pikchr?
 
 > Pikchr (pronounced "picture") is a PIC-like markup language for diagrams in technical documentation. Pikchr is designed to be embedded in fenced code blocks of Markdown or similar mechanisms of other documentation markup languages.
@@ -90,3 +92,6 @@ box same "Pikchr" "Formatter" "(pikchr.c)" fit
 
 ```
 
+# Render server
+
+Server to generate diagrams on-the-fly via http API. [More details.](./renderserver/README.md)
