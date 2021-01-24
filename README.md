@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/gebv/pikchr/workflows/CI/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gebv/pikchr)](https://goreportcard.com/report/github.com/gebv/pikchr)
-<a href="https://heroku.com/deploy?template=https://github.com/gebv/pikchr/tree/main">
+<a href="https://heroku.com/deploy?template=https://github.com/gebv/pikchr/tree/master">
 	<img src="https://www.herokucdn.com/deploy/button.png">
 </a>
 
@@ -12,7 +12,7 @@ This repository is a wrapper around the `pikchr.c` for use in Golang.
 
 **Render server.** If need server to generate diagrams on-the-fly via http API - [follow link](./renderserver/README.md)
 You can use a shared server for rendering (set by default in settings in the vscode-extention) or deploy your server
-<a href="https://heroku.com/deploy?template=https://github.com/gebv/pikchr/tree/main">
+<a href="https://heroku.com/deploy?template=https://github.com/gebv/pikchr/tree/master">
 	<img src="https://www.herokucdn.com/deploy/button.png">
 </a>
 
