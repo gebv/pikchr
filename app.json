@@ -1,0 +1,11 @@
+{
+    "name": "Server to generate pikchr diagrams",
+    "description": "Server to generate pikchr diagrams on-the-fly via http API",
+    "stack": "container",
+    "keywords": [
+      "pikchr",
+      "render-server"
+    ],
+    "website": "http://github.com/gebv/pikchr",
+    "repository": "http://github.com/gebv/pikchr"
+  }
