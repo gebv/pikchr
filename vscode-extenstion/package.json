@@ -45,6 +45,7 @@
 			"properties": {
 				"pikchr.render_server": {
 					"type": "string",
+					"default": "https://pikchr-render-server.herokuapp.com",
 					"description": "URL Server to generate diagrams on-the-fly."
 				}
 			}
