@@ -41,12 +41,11 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "Сonfiguration options",
+			"title": "Pikchr configuration options",
 			"properties": {
-				"pikchr.server_url": {
+				"pikchr.render_server": {
 					"type": "string",
-					"default": true,
-					"description": "URL to server"
+					"description": "URL Server to generate diagrams on-the-fly."
 				}
 			}
 		},
