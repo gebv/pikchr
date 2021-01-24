@@ -4,7 +4,7 @@ This is extenstion helper for debaging pikchr diagrams.
 
 **Render server.**
 You can use a shared server for rendering (set by default in settings in the vscode-extention https://pikchr-render-server.herokuapp.com/) or deploy your server
-<a href="https://heroku.com/deploy?template=https://github.com/gebv/pikchr/tree/main">
+<a href="https://heroku.com/deploy?template=https://github.com/gebv/pikchr/tree/master">
 	<img src="https://www.herokucdn.com/deploy/button.png">
 </a>
 
