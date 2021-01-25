@@ -4,9 +4,11 @@ test:
 build-render-server:
 	go build -o ./bin/render-server ./renderserver/main.go
 
-heroky-build-and-deploy:
+heroku-build-and-deploy:
 	heroku apps:create --region eu pikchr-render-server
 	heroku apps
 	heroku git:remote -a pikchr-render-server
 	heroku container:push web
 	heroku container:release web
+heroku-stats:
+	heroku ps -a pikchr-render-server
