@@ -16,9 +16,6 @@
 	},
 	"homepage": "https://github.com/gebv/pikchr/blob/master/vscode-extenstion/README.md",
 	"categories": [
-		"Programming Languages",
-		"Formatters",
-		"Snippets",
 		"Other"
 	],
 	"activationEvents": [
@@ -73,7 +70,13 @@
 	"extensionKind": [
 		"workspace"
 	],
-	"license": "SEE LICENSE IN LICENSE",
+	"license": "MIT",
+	"keywords": [
+        "pikchr",
+        "diagrams",
+        "viewer",
+        "svg"
+    ],
 	"devDependencies": {
 		"@types/vscode": "^1.52.0",
 		"@types/glob": "^7.1.3",
