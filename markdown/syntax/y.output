@@ -1,0 +1,176 @@
+
+state 0
+	$accept: .doc $end 
+	doc: .    (2)
+
+	TOKEN  shift 9
+	NEWLINE  shift 5
+	T_CODE_BLOCK  shift 7
+	WHITESPACE  shift 10
+	.  reduce 2 (src line 25)
+
+	word  goto 8
+	wblock  goto 3
+	codeblock  goto 4
+	words  goto 6
+	doc_blocks  goto 2
+	doc  goto 1
+
+state 1
+	$accept:  doc.$end 
+
+	$end  accept
+	.  error
+
+
+state 2
+	doc:  doc_blocks.    (1)
+	doc_blocks:  doc_blocks.wblock 
+	doc_blocks:  doc_blocks.codeblock 
+
+	TOKEN  shift 9
+	NEWLINE  shift 5
+	T_CODE_BLOCK  shift 7
+	WHITESPACE  shift 10
+	.  reduce 1 (src line 23)
+
+	word  goto 8
+	wblock  goto 11
+	codeblock  goto 12
+	words  goto 6
+
+state 3
+	doc_blocks:  wblock.    (3)
+
+	.  reduce 3 (src line 27)
+
+
+state 4
+	doc_blocks:  codeblock.    (5)
+
+	.  reduce 5 (src line 40)
+
+
+state 5
+	wblock:  NEWLINE.    (9)
+
+	.  reduce 9 (src line 62)
+
+
+state 6
+	wblock:  words.NEWLINE 
+	words:  words.word 
+
+	TOKEN  shift 9
+	NEWLINE  shift 13
+	WHITESPACE  shift 10
+	.  error
+
+	word  goto 14
+
+state 7
+	codeblock:  T_CODE_BLOCK.wblocks T_CODE_BLOCK NEWLINE 
+
+	TOKEN  shift 9
+	NEWLINE  shift 5
+	WHITESPACE  shift 10
+	.  error
+
+	word  goto 8
+	wblock  goto 16
+	words  goto 6
+	wblocks  goto 15
+
+state 8
+	words:  word.    (12)
+
+	.  reduce 12 (src line 81)
+
+
+state 9
+	word:  TOKEN.    (14)
+
+	.  reduce 14 (src line 93)
+
+
+state 10
+	word:  WHITESPACE.    (15)
+
+	.  reduce 15 (src line 93)
+
+
+state 11
+	doc_blocks:  doc_blocks wblock.    (4)
+
+	.  reduce 4 (src line 34)
+
+
+state 12
+	doc_blocks:  doc_blocks codeblock.    (6)
+
+	.  reduce 6 (src line 46)
+
+
+state 13
+	wblock:  words NEWLINE.    (10)
+
+	.  reduce 10 (src line 67)
+
+
+state 14
+	words:  words word.    (13)
+
+	.  reduce 13 (src line 86)
+
+
+state 15
+	wblocks:  wblocks.wblock 
+	codeblock:  T_CODE_BLOCK wblocks.T_CODE_BLOCK NEWLINE 
+
+	TOKEN  shift 9
+	NEWLINE  shift 5
+	T_CODE_BLOCK  shift 18
+	WHITESPACE  shift 10
+	.  error
+
+	word  goto 8
+	wblock  goto 17
+	words  goto 6
+
+state 16
+	wblocks:  wblock.    (7)
+
+	.  reduce 7 (src line 55)
+
+
+state 17
+	wblocks:  wblocks wblock.    (8)
+
+	.  reduce 8 (src line 57)
+
+
+state 18
+	codeblock:  T_CODE_BLOCK wblocks T_CODE_BLOCK.NEWLINE 
+
+	NEWLINE  shift 19
+	.  error
+
+
+state 19
+	codeblock:  T_CODE_BLOCK wblocks T_CODE_BLOCK NEWLINE.    (11)
+
+	.  reduce 11 (src line 75)
+
+
+7 terminals, 8 nonterminals
+16 grammar rules, 20/16000 states
+0 shift/reduce, 0 reduce/reduce conflicts reported
+57 working sets used
+memory: parser 20/240000
+0 extra closures
+19 shift entries, 1 exceptions
+12 goto entries
+6 entries saved by goto default
+Optimizer space used: output 27/240000
+27 table entries, 0 zero
+maximum spread: 7, maximum offset: 15
