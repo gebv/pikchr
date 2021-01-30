@@ -12,3 +12,6 @@ heroku-build-and-deploy:
 	heroku container:release web
 heroku-stats:
 	heroku ps -a pikchr-render-server
+
+md2pi:
+	go run ./cmd/md2pikchrs/main.go -in ./_tmp/*.md -out ./_out

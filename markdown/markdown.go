@@ -28,6 +28,10 @@ type MarkdownCodeBlock struct {
 	content *syntax.CodeBlock
 }
 
+func (b MarkdownCodeBlock) SyntaxBlock() *syntax.CodeBlock {
+	return b.content
+}
+
 func (b MarkdownCodeBlock) Language() string {
 	// NOTE: shuld be one
 	stringInfo := b.StringInfo().Content()[0]

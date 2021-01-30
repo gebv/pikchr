@@ -20,6 +20,8 @@ You can use a shared server for rendering (set by default in settings in the vsc
 
 If you have questions, comments, or suggestions, please visit the [GitHub Discussion board](https://github.com/gebv/pikchr/discussions).
 
+**CLI tools for render SVG from your md file with code blocks with source code of diagram**. [Follow link](./cmd/md2pikchrs/README.md) for details
+
 
 # What is pikchr?
 
