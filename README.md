@@ -9,6 +9,7 @@
 This repository is a wrapper around the `pikchr.c` for use in Golang.
 
 `pikchr.c` and `pikchr.h` version downloaded from that [https://pikchr.org/home/dir?ci=tip&type=tree](https://pikchr.org/home/dir?ci=tip&type=tree) on 2020-12-04 21:07:42.
+[pikchr syntax](https://pikchr.org/home/doc/trunk/doc/grammar.md)
 
 **Render server.** If need server to generate diagrams on-the-fly via http API - [follow link](./renderserver/README.md)
 You can use a shared server for rendering (set by default in settings in the vscode-extention) or deploy your server
