@@ -10,16 +10,34 @@ import (
 
 	"github.com/gebv/pikchr"
 	"github.com/gebv/pikchr/markdown"
+	"github.com/gebv/pikchr/markdown/syntax"
+)
+
+var (
+	version = "dev"
+	commit  = ""
+	date    = ""
+	builtBy = ""
 )
 
 var fOutDir = flag.String("out", "./out", "Sets dir for exported diagram files.")
 var fInFile = flag.String("in", "./*.md", "Input markdown file.")
+var fDebug = flag.Bool("debug", false, "Debug mode.")
+var fVersion = flag.Bool("v", false, "Print version.")
 
 func main() {
+	log.Println("md2pikchrs version:", version+"#"+commit)
+
 	flag.Parse()
+
 	validFlags()
-	filepath.Walk(*fInFile, func(path string, info os.FileInfo, err error) error {
-		if info.IsDir() {
+	applyFlags()
+
+	err := filepath.Walk(*fInFile, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info == nil || info.IsDir() {
 			log.Println("Skipped dir:", path)
 			return nil
 		}
@@ -59,6 +77,9 @@ func main() {
 		}
 		return nil
 	})
+	if err != nil {
+		log.Println("failed scan dir", *fInFile, ":", err)
+	}
 }
 
 func validFlags() {
@@ -69,5 +90,21 @@ func validFlags() {
 	if fInFile == nil || *fInFile == "" {
 		log.Println("Please sets in file\\files.")
 		os.Exit(1)
+	}
+}
+
+func applyFlags() {
+	if fDebug != nil && *fDebug {
+		log.Println("md2pikchrs enabled debug mode")
+		syntax.Debug()
+		syntax.ErrorVerbose()
+	}
+
+	if fVersion != nil && *fVersion {
+		log.Println("md2pikchrs version:", version)
+		log.Println("md2pikchrs commit:", commit)
+		log.Println("md2pikchrs build date:", date)
+		log.Println("md2pikchrs build by:", builtBy)
+		os.Exit(0)
 	}
 }

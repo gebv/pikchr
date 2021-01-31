@@ -15,3 +15,6 @@ heroku-stats:
 
 md2pi:
 	go run ./cmd/md2pikchrs/main.go -in ./_tmp/*.md -out ./_out
+
+build-md2pikchrs:
+	goreleaser build --skip-validate --rm-dist

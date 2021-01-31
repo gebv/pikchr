@@ -1,8 +1,32 @@
 # MD to pic
 
+**expereminal version and not sufficiently covered by tests**
+
 cli tools to integrate into your development process.
 
-How it works? `md2pikchrs` parse your markdown files and generated SVG files for each found code block with magic text. What is `magic text`? Follows example below
+mac
+```
+brew install gebv/tap/md2pikchrs
+```
+
+```bash
+md2pikchrs -out ./_out -in ./_tmp/*.md
+# 2021/01/31 10:58:54 md2pikchrs version: 1.0.2#f6608d1b842dfc76cb16c6de44703b12fccd95bd
+# 2021/01/31 10:58:54 ./_tmp/demo.md total 4 code blocks
+# 2021/01/31 10:58:54 ./_tmp/demo.md 4 interesting code blocks
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 fil1.svg rendering...
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 fil1.svg - OK
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar rendering...
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg - OK
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg rendering...
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg - OK
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg rendering...
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg - OK
+```
+
+NOTE: Files with the same name are overwritten
+
+**How it works?** `md2pikchrs` parse your markdown files and generated SVG files for each found code block with magic text. What is `magic text`? Follows example below
 
 It is your markdown file
 
@@ -42,6 +66,7 @@ NOTE: in the code block, the first line with the language name is called `string
 
 - create code block with language `pikchr`
 - after the language name, everything that will be specified will be the name of the generated file (before line break).
+- manually add img in your markdown text with a previously known path to the file of interest
 
 Nothing will be generated - not specified file name
 <pre>
@@ -67,26 +92,4 @@ Will be generated svg file with name `foo_bar.svg`
 <pre>
 ```pikchr foo bar.svg
 </pre>
-
-
-```bash
-md2pikchrs
-    --out=./out/dir/with/gens/svg/fiels
-    --in=./*.md
-```
-
-NOTE: Files with the same name are overwritten
-
-
-
-
-
-
-
-
-
-
-
-
-
 

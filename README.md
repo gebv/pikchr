@@ -20,7 +20,27 @@ You can use a shared server for rendering (set by default in settings in the vsc
 
 If you have questions, comments, or suggestions, please visit the [GitHub Discussion board](https://github.com/gebv/pikchr/discussions).
 
-**CLI tools for render SVG from your md file with code blocks with source code of diagram**. [Follow link](./cmd/md2pikchrs/README.md) for details
+**(expereminal version) CLI tools for render SVG from your md file with code blocks with source code of diagram**. [Follow link](./cmd/md2pikchrs/README.md) for details
+
+mac
+```
+brew install gebv/tap/md2pikchrs
+```
+
+```bash
+md2pikchrs -out ./_out -in ./_tmp/*.md
+# 2021/01/31 10:58:54 md2pikchrs version: 1.0.2#f6608d1b842dfc76cb16c6de44703b12fccd95bd
+# 2021/01/31 10:58:54 ./_tmp/demo.md total 4 code blocks
+# 2021/01/31 10:58:54 ./_tmp/demo.md 4 interesting code blocks
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 fil1.svg rendering...
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 fil1.svg - OK
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar rendering...
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg - OK
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg rendering...
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg - OK
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg rendering...
+# 2021/01/31 10:58:54 ./_tmp/demo.md 	 foo_bar.svg - OK
+```
 
 
 # What is pikchr?
